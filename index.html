@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+    <div class="game-container">
+        <div class="header">
+            <h1>🧠 Konstruktivisme Kognitif & Discovery Learning</h1>
+            <p>Game Interaktif untuk Memahami Konsep Pembelajaran Konstruktivisme</p>
+        </div>
+
+        <div id="main-menu" class="game-menu">
+            <div class="game-card" onclick="startGame('matching')">
+                <h3>🎯 Puzzle Konsep</h3>
+                <p>Cocokkan konsep dengan definisinya. Pelajari dasar-dasar konstruktivisme kognitif melalui permainan mencocokkan yang interaktif.</p>
+                <button class="btn">Mulai Permainan</button>
+            </div>
+
+            <div class="game-card" onclick="startGame('discovery')">
+                <h3>🔍 Tahapan Discovery Learning</h3>
+                <p>Susun tahapan discovery learning dengan benar. Pahami proses pembelajaran penemuan yang efektif.</p>
+                <button class="btn">Mulai Permainan</button>
+            </div>
+
+            <div class="game-card" onclick="startGame('schema')">
+                <h3>🏗️ Membangun Skema</h3>
+                <p>Bangun skema pengetahuan berlapis. Pelajari bagaimana pengetahuan diorganisir dalam pikiran.</p>
+                <button class="btn">Mulai Permainan</button>
+            </div>
+
+            <div class="game-card" onclick="startGame('quiz')">
+                <h3>📝 Kuis Interaktif</h3>
+                <p>Uji pemahaman Anda dengan kuis komprehensif. Evaluasi penguasaan materi konstruktivisme kognitif.</p>
+                <button class="btn">Mulai Kuis</button>
+            </div>
+        </div>
+
+        <!-- Matching Game -->
+        <div id="matching-game" class="game-area">
+            <button class="btn back-btn" onclick="backToMenu()">← Kembali ke Menu</button>
+            <h2>🎯 Puzzle Konsep Matching</h2>
+            <p>Klik konsep di sebelah kiri, lalu klik definisi yang sesuai di sebelah kanan!</p>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="matching-progress"></div>
+            </div>
+            
+            <div class="matching-game">
+                <div class="concepts">
+                    <h3>Konsep</h3>
+                    <div id="concept-list"></div>
+                </div>
+                <div class="definitions">
+                    <h3>Definisi</h3>
+                    <div id="definition-list"></div>
+                </div>
+            </div>
+            
+            <div class="score-display">
+                <span id="matching-score">Skor: 0/8</span>
+            </div>
+        </div>
+
+        <!-- Discovery Learning Game -->
+        <div id="discovery-game" class="game-area">
+            <button class="btn back-btn" onclick="backToMenu()">← Kembali ke Menu</button>
+            <h2>🔍 Tahapan Discovery Learning</h2>
+            <p>Drag dan drop tahapan-tahapan berikut ke urutan yang benar!</p>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="discovery-progress"></div>
+            </div>
+            
+            <div class="discovery-stages" id="discovery-stages"></div>
+            
+            <h3>Tahapan yang Tersedia:</h3>
+            <div id="discovery-items"></div>
+            
+            <div class="score-display">
+                <span id="discovery-score">Tahapan Benar: 0/6</span>
+            </div>
+        </div>
+
+        <!-- Schema Building Game -->
+        <div id="schema-game" class="game-area">
+            <button class="btn back-btn" onclick="backToMenu()">← Kembali ke Menu</button>
+            <h2>🏗️ Membangun Skema Pengetahuan</h2>
+            <p>Susun elemen-elemen pembelajaran ke dalam kategori yang tepat!</p>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="schema-progress"></div>
+            </div>
+            
+            <div class="schema-builder">
+                <div class="schema-level">
+                    <h4>🔴 Asimilasi</h4>
+                    <div id="assimilation" class="schema-category"></div>
+                </div>
+                <div class="schema-level">
+                    <h4>🟡 Akomodasi</h4>
+                    <div id="accommodation" class="schema-category"></div>
+                </div>
+                <div class="schema-level">
+                    <h4>🟢 Equilibrasi</h4>
+                    <div id="equilibration" class="schema-category"></div>
+                </div>
+            </div>
+            
+            <h3>Elemen Pembelajaran:</h3>
+            <div id="schema-items"></div>
+            
+            <div class="score-display">
+                <span id="schema-score">Elemen Benar: 0/12</span>
+            </div>
+        </div>
+
+        <!-- Quiz Game -->
+        <div id="quiz-game" class="game-area">
+            <button class="btn back-btn" onclick="backToMenu()">← Kembali ke Menu</button>
+            <h2>📝 Kuis Konstruktivisme Kognitif</h2>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="quiz-progress"></div>
+            </div>
+            
+            <div id="quiz-container"></div>
+            
+            <div class="score-display">
+                <span id="quiz-score">Pertanyaan: 1/10 | Skor: 0</span>
+            </div>
+            
+            <button class="btn" id="next-question" onclick="nextQuestion()" style="display: none;">Pertanyaan Selanjutnya</button>
+        </div>
+
+        <!-- Celebration Modal -->
+        <div id="celebration" class="celebration">
+            <div class="celebration-content">
+                <h2>🎉 Selamat!</h2>
+                <p id="celebration-message"></p>
+                <button class="btn" onclick="hideCelebration()">Lanjutkan</button>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
